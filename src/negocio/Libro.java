@@ -49,6 +49,7 @@ public class Libro{
 	}
 
 @Override
+//Método para imprimir los datos de un libro
 	public String toString(){
 	return getTitulo() + "," + getAutor() + "," + getFecha_publi() + "," + getNumero_id() + "," + getDisponibleString();
 	}
