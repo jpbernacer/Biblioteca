@@ -1,26 +1,5 @@
-/**
- * La clase Libro representa un libro en la biblioteca.
- * 
- * Atributos:
- * - titulo: El título del libro.
- * - autor: El autor del libro.
- * - fecha_publi: La fecha de publicación del libro.
- * - numero_id: El número de identificación del libro.
- * - disponible: Indica si el libro está disponible para préstamo.
- * 
- * Constructores:
- * - Libro(String titulo, String autor, String fecha_publi, int numero_id, boolean disponible): 
- *   Inicializa un nuevo libro con los valores proporcionados.
- * 
- * Métodos:
- * - getTitulo(): Devuelve el título del libro.
- * - getAutor(): Devuelve el autor del libro.
- * - getFecha_publi(): Devuelve la fecha de publicación del libro.
- * - getNumero_id(): Devuelve el número de identificación del libro como una cadena de texto.
- * - getDisponible(): Devuelve la disponibilidad del libro como un valor booleano.
- * - getDisponibleString(): Devuelve la disponibilidad del libro como una cadena de texto ("disponible" o "no disponible").
- * - toString(): Devuelve una representación en cadena de texto de los datos del libro.
- * 
+
+ /* 
  * Código escrito por: Juan Pablo Bernacer
  * Idioma: Español
  */
@@ -29,13 +8,13 @@ package negocio;
 
 public class Libro{
 	private String titulo, autor, fecha_publi;
+	private String disponible;
 	private int numero_id;
-	private boolean disponible;
 
 
 //Constructores 
 
-	public Libro(String titulo, String autor, String fecha_publi, int numero_id, boolean disponible){
+	public Libro(String titulo, String autor, String fecha_publi, int numero_id, String disponible){
 		this.titulo = titulo;
 		this.autor = autor;
 		this.fecha_publi = fecha_publi;
@@ -62,22 +41,14 @@ public class Libro{
 	}
 	// Método para obtener valor de disponible en valor booleano
 
-    public boolean getDisponible(){
+    public String getDisponible(){
         return disponible;
     }
 
-	//Para que el valor de disponible sea un String y no un booleano
-	public String getDisponibleString(){
-		if (disponible){
-			return "disponible";
-		} else {
-			return "no disponible";
-		}
-	}
 
 @Override
 //Método para imprimir los datos de un libro
 	public String toString(){
-	return getTitulo() + "," + getAutor() + "," + getFecha_publi() + "," + getNumero_id() + "," + getDisponibleString();
+	return getTitulo() + "," + getAutor() + "," + getFecha_publi() + "," + getNumero_id() + "," + getDisponible();
 	}
 }

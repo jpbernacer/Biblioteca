@@ -34,16 +34,12 @@ public class Biblioteca{
                 /* Según se van cargando cada dato ordenando, 
                 se sabe que llevará un patrón específico correspondiendo con el 
                 título, autor, fecha, id, disponible */
-                listaLibros.add(new Libro(sc.next(), sc.next(), sc.next(), sc.next(), sc.next())
                 String titulo = sc.next();
                 String autor = sc.next();
                 String fecha_publi = sc.next();
-                Integer numero_id = valueOf(sc.next());
-                Boolean disponible = if (sc.next() == "disponible") {disponible = true};
-                    else {disponible = false}
-                }
-            
-            
+                String numero_id = String.valueOf(sc.next());
+                String disponible = sc.next(); 
+                listaLibros.add(new Libro(titulo, autor, fecha_publi, numero_id, disponible));
             }
 
         } catch (IOException e) {
