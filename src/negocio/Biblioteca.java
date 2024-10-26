@@ -34,19 +34,18 @@ public class Biblioteca{
                 /* Según se van cargando cada dato ordenando, 
                 se sabe que llevará un patrón específico correspondiendo con el 
                 título, autor, fecha, id, disponible */
-                String titulo = sc.next();
-                String autor = sc.next();
-                String fecha_publi = sc.next();
-                String numero_id = String.valueOf(sc.next());
-                String disponible = sc.next(); 
-                listaLibros.add(new Libro(titulo, autor, fecha_publi, numero_id, disponible));
+                listaLibros.add(new Libro(sc.next(), sc.next(), sc.next(), sc.nextInt(), sc.next()));
             }
 
-        } catch (IOException e) {
-            
-        }
+        }catch(IOException ex){
+			System.out.println("Error en la lectura del fichero de libros.");
+			System.out.println("A continuación se muestra más información:");
+			System.out.println(ex);
+		}finally{
+			if (sc != null) sc.close();
+		}
 
-    }
+	}
 
 
 
