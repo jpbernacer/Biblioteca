@@ -12,9 +12,12 @@ public class InterfazUsuario{
 // Si escribo `java -jar biblioteca.jar añadir El Quijote Cervantes`
 // entonces
 // `instruccion[0]` es `añadir`
-// `instruccion[1]` es `El`
-// `instruccion[2]` es `Quijote`
-// `instruccion[3]` es `Cervantes`
+// `instruccion[1]` es `Título`
+// `instruccion[2]` es `Autor`
+// `instruccion[3]` es `Fecha de publicación`
+// `instruccion[4]` es `Número de identificador`
+// `instruccion[5]` es `Disponibilidad`
+
         Biblioteca biblioteca = new Biblioteca();
     
         if (instruccion.length == 0 || instruccion[0].equalsIgnoreCase("ayuda") && instruccion.length == 1){
@@ -37,7 +40,7 @@ public class InterfazUsuario{
     private static void ayuda(){
         System.out.println("\n"+negrita+"DESCRIPCIÓN"+normal);
         System.out.println("\tEsta aplicación ofrece las siguientes funcionalidades:\n\n" +
-        "\t- añadir [titulo] [autor] [editorial]: Añade un nuevo libro a la biblioteca\n" +
+        "\t- añadir [titulo] [autor] [fecha publicación] [numero de identificador] [disponibilidad]: Añade un nuevo libro a la biblioteca\n" +
         "\t- mostrar: Muestra todos los libros en la biblioteca\n" +
         "\t- ayuda: Muestra esta ayuda\n");
     }
