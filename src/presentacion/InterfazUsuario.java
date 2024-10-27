@@ -21,7 +21,7 @@ public class InterfazUsuario{
             ayuda();
         }else if (instruccion[0].equalsIgnoreCase("mostrar") && instruccion.length == 1){
             mostrarLibros(biblioteca);
-        }else if (instruccion[0].equalsIgnoreCase("añadir") && instruccion.length == 4){
+        }else if (instruccion[0].equalsIgnoreCase("añadir") && instruccion.length == 6){
             Libro libro = new Libro(instruccion[1], instruccion[2], instruccion[3], instruccion[4], instruccion[5]);
             biblioteca.annadir(libro);
         }else{
