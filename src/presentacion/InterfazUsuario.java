@@ -1,3 +1,7 @@
+/* Código adaptado por Juan Pablo Bernacer del código original de Mariano
+ * Escrito en Español
+*/
+
 package presentacion;
 
 import negocio.Biblioteca;
