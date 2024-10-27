@@ -1,6 +1,7 @@
 package presentacion;
 
-import negocio.*;
+import negocio.Padron;
+import negocio.Habitante;
 
 public class InterfazUsuario{
 	private static String negrita = "\u001B[1m";

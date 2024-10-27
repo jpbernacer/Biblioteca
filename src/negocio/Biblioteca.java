@@ -34,7 +34,7 @@ public class Biblioteca{
                 /* Según se van cargando cada dato ordenando, 
                 se sabe que llevará un patrón específico correspondiendo con el 
                 título, autor, fecha, id, disponible */
-                listaLibros.add(new Libro(sc.next(), sc.next(), sc.next(), sc.nextInt(), sc.next()));
+                listaLibros.add(new Libro(sc.next(), sc.next(), sc.next(), sc.next(), sc.next()));
             }
 
         }catch(IOException ex){
@@ -47,6 +47,35 @@ public class Biblioteca{
 
 	}
 
+    public void annadir(Libro libro){
+        listaLibros.add(libro);
+        volcarLibros();
+    }
 
+    private void volcarLibros(){
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter("biblioteca.csv");
+            for(Libro libro : listaLibros){
+                fw.write(libro.getTitulo() + "," + libro.getAutor() + "," + libro.getFecha_publi() + "," + libro.getNumero_id() + "," + libro.getDisponible() + "\n");
+            }
+        }catch(IOException ex){
+            System.out.println("No se ha podido añadir el nuevo libro. Error en la escritura del fichero");
+            System.out.println("A continuación se muestra más información:");
+            System.out.println(ex);
+        }finally{
+            try{
+                if (fw != null) fw.close();
+            }catch(IOException ex){
+                System.out.println(ex);
+            }
+        }
+    }
 
+    @Override
+    public String toString(){
+        StringBuilder strLibros = new StringBuilder();
+        for(Libro libro : listaLibros) strLibros.append(libro + "\n");
+        return strLibros.toString();
+    }
 }
