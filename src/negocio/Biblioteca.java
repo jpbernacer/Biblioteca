@@ -25,7 +25,7 @@ public class Biblioteca{
             sc = new Scanner(fichero);
             /* Se pone un limitador para delimitar donde empieza cada dato es decir, cada dato del libro
             En este caso buscará el patrón de una coma (,) o (|) un salto de línea (\n) */
-            sc.useDelimiter(", | \n");
+            sc.useDelimiter(",|\n");
 
             /* Se inicia el bucle while para cada vez que se tenga un nuevo dato por cargar 
             se añada cada dato a cada libro */
