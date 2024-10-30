@@ -1,3 +1,11 @@
+/**
+ * Clase Biblioteca que gestiona una colección de libros.
+ * Proporciona métodos para cargar libros desde un archivo, añadir nuevos libros y volcar la lista de libros a un archivo.
+ * 
+ * Código creado por Juan Pablo Bernacer 
+ * Escrito en Español
+ * 30/10/2024
+ */
 package negocio;
 
 import java.util.ArrayList;
@@ -6,88 +14,86 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Biblioteca{
-    private ArrayList <Libro> listaLibros = new ArrayList<>();
+public class Biblioteca {
+    private ArrayList<Libro> listaLibros = new ArrayList<>();
 
-    public Biblioteca(){
+    /**
+     * Constructor de la clase Biblioteca.
+     * Llama al método cargarLibros para inicializar la lista de libros desde un archivo.
+     */
+    public Biblioteca() {
         cargarLibros();
     }
-    private void cargarLibros(){
-        // Se inicia el Scanner y se verifica que sea null como valor inicial
+
+    /**
+     * Método privado para cargar los libros desde un archivo CSV.
+     * Lee los datos del archivo y los añade a la lista de libros.
+     */
+    private void cargarLibros() {
         Scanner sc = null;
 
         try {
-            // Se inicializa File y se le adjudica el nombre fichero.
-            File fichero = new File ("biblioteca.csv");
-            // Se crea primero el fichero.
+            File fichero = new File("biblioteca.csv");
             fichero.createNewFile();
-            //Se inicializa el escaner para el fichero.
             sc = new Scanner(fichero);
-            /* Se pone un limitador para delimitar donde empieza cada dato es decir, cada dato del libro
-            En este caso buscará el patrón de una coma (,) o (|) un salto de línea (\n) */
             sc.useDelimiter(",|\n");
 
-            /* Se inicia el bucle while para cada vez que se tenga un nuevo dato por cargar 
-            se añada cada dato a cada libro */
-
-            while (sc.hasNext()){
-                /* Según se van cargando cada dato ordenando, 
-                se sabe que llevará un patrón específico correspondiendo con el 
-                título, autor, fecha, id, disponible */
+            while (sc.hasNext()) {
                 listaLibros.add(new Libro(sc.next(), sc.next(), sc.next(), sc.next(), sc.next()));
             }
 
-        }catch(IOException ex){
-            //Impresión de error en caso de que no se pueda cargar el fichero
-			System.out.println("Error en la lectura del fichero de libros.");
-			System.out.println("A continuación se muestra más información:");
-			System.out.println(ex);
-		}finally{
-            // Si el Scanner no es null, se cierra
-			if (sc != null) sc.close();
-		}
+        } catch (IOException ex) {
+            System.out.println("Error en la lectura del fichero de libros.");
+            System.out.println("A continuación se muestra más información:");
+            System.out.println(ex);
+        } finally {
+            if (sc != null) sc.close();
+        }
+    }
 
-	}
-
-    public void annadir(Libro libro){
-       // Método para añadir un libro a la lista de libros y volcarlos existentes al programa
+    /**
+     * Método para añadir un libro a la lista de libros y volcar los libros existentes al archivo.
+     * 
+     * @param libro El libro a añadir.
+     */
+    public void annadir(Libro libro) {
         listaLibros.add(libro);
         volcarLibros();
     }
 
-    private void volcarLibros(){
-        // Inicialización de FileWriter
+    /**
+     * Método privado para volcar la lista de libros a un archivo CSV.
+     * Escribe los datos de cada libro en el archivo.
+     */
+    private void volcarLibros() {
         FileWriter fw = null;
-        try{
-            // Se inicializa el FileWriter para el fichero biblioteca.csv
+        try {
             fw = new FileWriter("biblioteca.csv");
-            // Por cada libro en la lista de libros se añade un nuevo libro
-            for(Libro libro : listaLibros){
+            for (Libro libro : listaLibros) {
                 fw.write(libro.getTitulo() + "," + libro.getAutor() + "," + libro.getFecha_publi() + "," + libro.getNumero_id() + "," + libro.getDisponible() + "\n");
             }
-        }catch(IOException ex){
-            //Impresión de error en caso de que no se pueda añadir un nuevo libro
+        } catch (IOException ex) {
             System.out.println("No se ha podido añadir el nuevo libro. Error en la escritura del fichero");
             System.out.println("A continuación se muestra más información:");
             System.out.println(ex);
-        }finally{
-            try{
-                // Si el FileWriter no es null, se cierra
+        } finally {
+            try {
                 if (fw != null) fw.close();
-            }catch(IOException ex){
-                //Impresión de error en caso de que no se pueda cerrar el FileWriter
+            } catch (IOException ex) {
                 System.out.println(ex);
             }
         }
     }
 
+    /**
+     * Método para obtener una representación en cadena de la lista de libros.
+     * 
+     * @return Una cadena con los datos de todos los libros.
+     */
     @Override
-    public String toString(){
-        // Método para imprimir los datos de los libros
-        // Se inicializa un StringBuilder para concatenar los datos de los libros
+    public String toString() {
         StringBuilder strLibros = new StringBuilder();
-        // Por cada libro en la lista de libros se añade un nuevo libro
-        for(Libro libro : listaLibros) strLibros.append(libro + "\n");
+        for (Libro libro : listaLibros) strLibros.append(libro + "\n");
         return strLibros.toString();
     }
 }
