@@ -1,28 +1,46 @@
-# Ignore macOS system files
-.DS_Store
-
-# Ignore node_modules directory
-node_modules/
-
-# Ignore log files
-*.log
-
-# Ignore build directories
-dist/
-build/
-
-# Ignore environment variable files
-.env
-
-# Ignore IDE specific files
-.vscode/
-.idea/
-
-# Ignore compiled files
-*.o
-*.out
+# Compiled class files
 *.class
 
-# Ignore Python cache files
-__pycache__/
-*.pyc
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# VSCode settings
+.vscode/
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
