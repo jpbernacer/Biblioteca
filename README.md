@@ -82,4 +82,5 @@ La clase `InterfazUsuario` gestiona las instrucciones del usuario.
 
 ### Principal
 La clase `Principal` se encarga de inicializar el programa y las clases.
-
+## DIAGRAMA DE CLASES
+![Diagrama de clases](https://github.com/jpbernacer/Biblioteca/blob/53335f58c65671d428d89ec85da5967132980e71/Biblioteca%20Diagrama.png?raw=true)
