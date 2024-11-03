@@ -70,7 +70,7 @@ public class Biblioteca {
         try {
             fw = new FileWriter("biblioteca.csv");
             for (Libro libro : listaLibros) {
-                fw.write(libro.getTitulo() + "," + libro.getAutor() + "," + libro.getFecha_publi() + "," + libro.getNumero_id() + "," + libro.getDisponible() + "\n");
+                fw.write(libro.toString() + "\n");
             }
         } catch (IOException ex) {
             System.out.println("No se ha podido añadir el nuevo libro. Error en la escritura del fichero");
