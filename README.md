@@ -56,6 +56,8 @@ java -jar biblioteca.jar mostrar
 ## ESTRUCTURA INTERNA DEL SISTEMA
 
 El siguiente diagrama UML muestra los paquetes y las clases. El paquete `negocio` contiene las clases `Libro.java`, `Biblioteca.java`, `InterfazUsuario.java` y `Principal.java`. 
+### Diagrama de clases
+![Diagrama de clases](https://github.com/jpbernacer/Biblioteca/blob/53335f58c65671d428d89ec85da5967132980e71/Biblioteca%20Diagrama.png?raw=true)
 
 ### Libro
 La clase `Libro` se encarga de declarar las características de cada libro: 
@@ -82,5 +84,4 @@ La clase `InterfazUsuario` gestiona las instrucciones del usuario.
 
 ### Principal
 La clase `Principal` se encarga de inicializar el programa y las clases.
-## DIAGRAMA DE CLASES
-![Diagrama de clases](https://github.com/jpbernacer/Biblioteca/blob/53335f58c65671d428d89ec85da5967132980e71/Biblioteca%20Diagrama.png?raw=true)
+
