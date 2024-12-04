@@ -25,6 +25,12 @@ public class Libro {
         this.id = id;
     }
 
+    public Libro(String titulo, String autor, String fecha_publi, String disponible) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.fecha_publi = fecha_publi;
+        this.disponible = disponible;
+    }
 
     public String getTitulo() {
         return titulo;
