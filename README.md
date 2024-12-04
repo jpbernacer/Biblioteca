@@ -41,9 +41,16 @@ java -jar biblioteca.jar ayuda
 Para añadir un libro a la lista de la biblioteca se deberá ejecutar el siguiente comando rellenando la información deseada en los corchetes:
 
 ```console
-java -jar biblioteca.jar añadir [Título del libro] [Autor] [Fecha de publicación] [Número de identificador] [Disponible / No disponible]
+java -jar biblioteca.jar añadir [Título del libro] [Autor] [Fecha de publicación] [Disponible / No disponible]
 ```
 Si alguno de los datos es compuesto (es decir, está formado por varias palabras) deberá ir entre comillas `""`.
+
+### Borrar libro
+Para borrar un libro de lista de la biblioteca se deberá ejecutar el siguiente comando rellenando la información deseada en los corchetes:
+
+```console
+java -jar biblioteca.jar borrar [Número de identificador] 
+```
 
 ### Mostrar libros
 
@@ -77,6 +84,9 @@ La clase `Biblioteca` se encarga de:
 - **Volcar los libros** desde el fichero utilizando el método `volcarLibros()`.
 
 - **Añadir libros** a la biblioteca utilizando el método `annadirLibros()`.
+
+- **Borrar libros** encontrando el libro que se quiera borrar
+
 - **Obtiene una representación en cadena de la lista de libros** sobreescribiendo el método `toString()`.
 
 ### Interfaz Usuario
