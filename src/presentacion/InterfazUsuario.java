@@ -29,8 +29,8 @@ public class InterfazUsuario {
             biblioteca.borrar(libro); 
         } 
         
-        else if (instruccion[0].equalsIgnoreCase("añadir") && instruccion.length == 6) {
-            Libro libro = new Libro(Integer.parseInt(instruccion[1]), instruccion[2], instruccion[3], instruccion[4], instruccion[5]);
+        else if (instruccion[0].equalsIgnoreCase("añadir") && instruccion.length == 5) {
+            Libro libro = new Libro(instruccion[1], instruccion[2], instruccion[3], instruccion[4]);
             biblioteca.annadir(libro);
         } 
         
