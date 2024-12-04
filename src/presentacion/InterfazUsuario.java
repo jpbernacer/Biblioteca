@@ -46,9 +46,14 @@ public class InterfazUsuario {
 
     private static void ayuda() {
         System.out.println("\n" + negrita + "DESCRIPCIÓN" + normal);
-        System.out.println("\tEsta aplicación ofrece las siguientes funcionalidades:\n\n" +
-            "\t- añadir [numero de identificador] [titulo] [autor] [fecha publicación] [disponibilidad]: Añade un nuevo libro a la biblioteca\n" +
+        System.out.println(
+            "\tLos libros se encuentran estructurados de la siguiente forma:\n" +
+            "\t- Número de identificador, Titulo, Autor, Fecha de publicación, Disponibilidad\n" +
+            "\tLa aplicación ofrece las siguientes funcionalidades\n" +
+            "\t- añadir [titulo] [autor] [fecha publicación] [disponibilidad]: Añade un nuevo libro a la biblioteca\n" +
             "\t- mostrar: Muestra todos los libros en la biblioteca\n" +
-            "\t- ayuda: Muestra esta ayuda\n");
+            "\t- borrar [número de identificado]: Borra un libro utilizando el número de identificador *\n" +
+            "\t- ayuda: Muestra esta ayuda\n" 
+            );
     }
 }
